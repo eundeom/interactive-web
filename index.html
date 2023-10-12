@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./resources/js/apikey.js"></script>
-    <script src="./resources/js/index.js"></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <header></header>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./resources/js/apikey.js"></script>
+		<script src="./resources/js/index.js"></script>
+		<title>Weather</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="./resources/styles/index.css" />
+	</head>
+	<body>
+		<div id="entire-box" class="flex">
+			<aside id="weather-summary">
+				<img
+					class="inline-block"
+					src="./resources/svg/location.svg"
+					alt="location Icon"
+					width="20px"
+					height="30px"
+				/>
+				<span id="location">New York, USA</span>
+				<p id="date">Today 11 Oct</p>
+				<p class="font-semibold text-8xl">27°</p>
+				<p>Sunny</p>
+			</aside>
+			<main id="weather-main"></main>
+		</div>
+	</body>
 </html>

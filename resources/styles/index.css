@@ -1,0 +1,18 @@
+#weather-summary {
+	border: 1px solid black;
+	height: 100vh;
+	width: 250px;
+}
+#weather-main {
+	border: 1px solid blue;
+}
+@media only screen and (min-width: 1300px) {
+	body {
+		width: 1300px;
+	}
+}
+@media only screen and (min-width: 820px) and (max-width: 1300px) {
+	body {
+		padding: 0 100px;
+	}
+}
