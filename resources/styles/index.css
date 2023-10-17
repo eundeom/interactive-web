@@ -1,18 +1,32 @@
 #weather-summary {
-	border: 1px solid black;
-	height: 100vh;
-	width: 250px;
+  /* border: 1px solid black; */
+  height: 100vh;
+  width: 260px;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+  color: white;
+  background-color: #629cf3;
 }
 #weather-main {
-	border: 1px solid blue;
+  border: 1px solid blue;
 }
 @media only screen and (min-width: 1300px) {
-	body {
-		width: 1300px;
-	}
+  body {
+    width: 1300px;
+  }
 }
 @media only screen and (min-width: 820px) and (max-width: 1300px) {
-	body {
-		padding: 0 100px;
-	}
+  body {
+    padding: 0 100px;
+  }
+}
+.location-name {
+  margin-top: 150px;
+  padding-bottom: 3px;
+}
+#location {
+  font-size: 18px;
+}
+#today {
+  padding-bottom: 6px;
 }
