@@ -23,16 +23,40 @@ const getWebtoon = async (lat, lon) => {
     console.log(data);
   } catch {}
 };
-
 const setTemperature = () => {
   const temperature = Math.floor(
     JSON.parse(localStorage.getItem("main")).temp - 273.15
   );
-
   const temper = document.getElementById("temper");
   temper.innerText = temperature + "°";
+
+  const spanCelsius = document.getElementById("spanCelsius");
+  const spanFahrenheit = document.getElementById("spanFahrenheit");
+  spanFahrenheit.style.fontSize = "80%";
+  spanCelsius.style.fontSize = "80%";
+  spanFahrenheit.style.color = "#b4cff2";
 };
 setTemperature();
+
+const changeTemp = () => {
+  const temperature = Math.floor(
+    JSON.parse(localStorage.getItem("main")).temp - 273.15
+  );
+
+  const checkBox = document.getElementById("switchCheck");
+  const spanCelsius = document.getElementById("spanCelsius");
+  const spanFahrenheit = document.getElementById("spanFahrenheit");
+
+  if (checkBox.checked) {
+    temper.innerText = temperature + 273.15 + "°";
+    spanCelsius.style.color = "#b4cff2";
+    spanFahrenheit.style.color = "#ffffff";
+  } else {
+    temper.innerText = temperature + "°";
+    spanCelsius.style.color = "#ffffff";
+    spanFahrenheit.style.color = "#b4cff2";
+  }
+};
 
 const setName = () => {
   const locationName = localStorage.getItem("name");
@@ -56,6 +80,8 @@ const setWeatherDesc = () => {
     weatherBackground.style.backgroundColorcolor = "#4C87DE";
   } else if (description == "Clouds") {
     weatherImg.src = "resources/svg/weather-cloud.png";
+  } else if (description == "Rain") {
+    weatherImg.src = "resources/svg/weather-rain.png";
   }
 };
 setWeatherDesc();

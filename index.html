@@ -11,6 +11,17 @@
   <body class="font-sans">
     <div id="entire-box" class="flex">
       <aside id="weather-summary">
+        <div class="changeTemp">
+          <span id="spanCelsius">°C</span>
+          <div class="cl-toggle-switch">
+            <label class="cl-switch">
+              <input type="checkbox" onclick="changeTemp()" id="switchCheck" />
+              <span></span>
+            </label>
+          </div>
+          <span id="spanFahrenheit">&nbsp;&nbsp;°F</span>
+        </div>
+
         <div class="location-name">
           <img
             class="inline-block"
