@@ -82,6 +82,8 @@ const setWeatherDesc = () => {
     weatherImg.src = "resources/svg/weather-cloud.png";
   } else if (description == "Rain") {
     weatherImg.src = "resources/svg/weather-rain.png";
+  } else if (description == "Mist") {
+    weatherImg.src = "resources/svg/weather-mist.png";
   }
 };
 setWeatherDesc();
@@ -95,3 +97,34 @@ const setDate = () => {
   dayMonth.innerText = "today " + today.toLocaleDateString("en-US", options);
 };
 setDate();
+
+const setHumidity = () => {
+  const humi = JSON.parse(localStorage.getItem("main")).humidity;
+  const humiText = document.getElementById("humi");
+  humiText.innerText = humi + "%";
+  humiText.style.fontSize = "200%";
+
+  const humiState = document.getElementById("humiState");
+  if (humi > 35 && humi < 60) {
+    humiState.innerText = "Good";
+  } else {
+    humiState.innerText = "Bad";
+  }
+};
+setHumidity();
+
+const setWind = () => {
+  const wind = JSON.parse(localStorage.getItem("wind")).speed;
+  const windText = document.getElementById("windText");
+  windText.innerText = wind + "km/h";
+  windText.style.fontSize = "200%";
+};
+setWind();
+
+const setFeelsLike = () => {
+  const feelLike = JSON.parse(localStorage.getItem("main")).feels_like;
+  const feelText = document.getElementById("feelText");
+  feelText.innerText = feelLike + "°";
+  feelText.style.fontSize = "200%";
+};
+setFeelsLike();

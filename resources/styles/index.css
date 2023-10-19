@@ -1,15 +1,19 @@
+#entire-box {
+  /* margin: 0 auto; */
+  margin-left: 100px;
+}
 #weather-summary {
   /* border: 1px solid black; */
   height: 100vh;
   width: 260px;
   text-align: center;
-  border-radius: 10px 0 0 10px;
+  border-radius: 40px 0 0 40px;
   color: white;
   background-color: #629cf3;
 }
-#weather-main {
+/* #weather-main {
   border: 1px solid blue;
-}
+} */
 @media only screen and (min-width: 1300px) {
   body {
     width: 1300px;
@@ -21,7 +25,7 @@
   }
 }
 .location-name {
-  margin-top: 50px;
+  margin-top: 80px;
   padding-bottom: 3px;
 }
 #location {
@@ -56,8 +60,8 @@
   display: block;
   margin: 0;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: rgb(0, 0, 0, 0.2);
   outline: none;
   opacity: 0;
@@ -165,4 +169,104 @@
 
 .spanFahrenheit {
   font-size: 13px;
+}
+
+.weather-widget {
+  display: flex;
+  flex-direction: row;
+  margin-top: 500px;
+}
+#weather-main {
+  background-color: #ddeeff;
+  border-radius: 0 40px 40px 0;
+}
+
+/* humidity */
+#humidity {
+  width: 250px;
+  height: 150px;
+  border-radius: 40px 40px 40px 40px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  /* 상우하좌 */
+  margin: 0 20px 0 50px;
+  /* -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px); */
+}
+
+.humiText {
+  position: relative;
+  margin-left: 30px;
+  padding-top: 10px;
+}
+
+.humiSvg {
+  margin-left: 90px;
+  padding-top: 10px;
+}
+
+.humiRow {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+  padding-top: 20px;
+}
+.humiContents {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#humi {
+  margin-left: 70px;
+}
+#humiState {
+  margin-top: 18px;
+  margin-left: 20px;
+}
+
+/* wind */
+#windSpeed {
+  width: 250px;
+  height: 150px;
+  border-radius: 40px 40px 40px 40px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 0 20px 0 20px;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+
+#windTitle {
+  margin-left: 50px;
+  padding-top: 30px;
+}
+
+#windText {
+  position: relative;
+  margin-left: 55px;
+  padding-top: 10px;
+}
+
+/* feels like */
+#feelsLike {
+  width: 250px;
+  height: 150px;
+  border-radius: 40px 40px 40px 40px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 0 50px 0 20px;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+#feel {
+  margin-left: 50px;
+  padding-top: 30px;
+}
+#feelText {
+  position: relative;
+  margin-left: 70px;
+  padding-top: 10px;
 }
