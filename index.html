@@ -5,6 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="./resources/js/apikey.js"></script>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;600&family=Poppins&family=Work+Sans&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Weather</title>
 		<link rel="stylesheet" href="./resources/styles/index.css" />
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -12,6 +18,17 @@
 	<body class="font-sans">
 		<div id="entire-box" class="flex">
 			<aside id="weather-summary">
+				<div class="changeTemp">
+					<span id="spanCelsius">°C</span>
+					<div class="cl-toggle-switch">
+						<label class="cl-switch">
+							<input type="checkbox" onclick="changeTemp()" id="switchCheck" />
+							<span></span>
+						</label>
+					</div>
+					<span id="spanFahrenheit">&nbsp;&nbsp;°F</span>
+				</div>
+
 				<div class="location-name">
 					<img
 						class="inline-block"
@@ -44,6 +61,37 @@
 					<p>Upcoming hours</p>
 					<canvas id="hourlyPredictionChart" width="400" height="400"></canvas>
 				</section>
+
+				<div class="weather-widget">
+					<!-- humidity -->
+					<div id="humidity">
+						<div class="humiRow">
+							<p class="humiText">Humidity</p>
+							<img
+								class="humiSvg"
+								src="./resources/svg/humidity.png"
+								width="20px"
+								height="20pxs"
+							/>
+						</div>
+						<div class="humiContents">
+							<p id="humi"></p>
+							<p id="humiState"></p>
+						</div>
+					</div>
+					<!-- wind speed -->
+					<div id="windSpeed">
+						<p id="windTitle">Wind</p>
+						<p id="windText"></p>
+					</div>
+					<!-- feels like -->
+					<div>
+						<div id="feelsLike">
+							<p id="feel">Feels like</p>
+							<p id="feelText"></p>
+						</div>
+					</div>
+				</div>
 			</main>
 		</div>
 		<script src="./resources/js/index.js"></script>

@@ -20,20 +20,42 @@ const getWeatherSummary = async (lat, lon) => {
 		localStorage.setItem('wind', JSON.stringify(data.wind));
 		localStorage.setItem('main', JSON.stringify(data.main));
 		localStorage.setItem('name', data.name);
-
-		// console.log(data);
 	} catch {}
 };
-
 const setTemperature = () => {
 	const temperature = Math.floor(
 		JSON.parse(localStorage.getItem('main')).temp - 273.15
 	);
-
 	const temper = document.getElementById('temper');
 	temper.innerText = temperature + '°';
+
+	const spanCelsius = document.getElementById('spanCelsius');
+	const spanFahrenheit = document.getElementById('spanFahrenheit');
+	spanFahrenheit.style.fontSize = '80%';
+	spanCelsius.style.fontSize = '80%';
+	spanFahrenheit.style.color = '#b4cff2';
 };
 setTemperature();
+
+const changeTemp = () => {
+	const temperature = Math.floor(
+		JSON.parse(localStorage.getItem('main')).temp - 273.15
+	);
+
+	const checkBox = document.getElementById('switchCheck');
+	const spanCelsius = document.getElementById('spanCelsius');
+	const spanFahrenheit = document.getElementById('spanFahrenheit');
+
+	if (checkBox.checked) {
+		temper.innerText = temperature + 273.15 + '°';
+		spanCelsius.style.color = '#b4cff2';
+		spanFahrenheit.style.color = '#ffffff';
+	} else {
+		temper.innerText = temperature + '°';
+		spanCelsius.style.color = '#ffffff';
+		spanFahrenheit.style.color = '#b4cff2';
+	}
+};
 
 const setName = () => {
 	const locationName = localStorage.getItem('name');
@@ -57,6 +79,10 @@ const setWeatherDesc = () => {
 		weatherBackground.style.backgroundColorcolor = '#4C87DE';
 	} else if (description == 'Clouds') {
 		weatherImg.src = 'resources/svg/weather-cloud.png';
+	} else if (description == 'Rain') {
+		weatherImg.src = 'resources/svg/weather-rain.png';
+	} else if (description == 'Mist') {
+		weatherImg.src = 'resources/svg/weather-mist.png';
 	}
 };
 setWeatherDesc();
@@ -69,6 +95,37 @@ const setDate = () => {
 	dayMonth.innerText = 'today ' + today.toLocaleDateString('en-US', options);
 };
 setDate();
+
+const setHumidity = () => {
+	const humi = JSON.parse(localStorage.getItem('main')).humidity;
+	const humiText = document.getElementById('humi');
+	humiText.innerText = humi + '%';
+	humiText.style.fontSize = '200%';
+
+	const humiState = document.getElementById('humiState');
+	if (humi > 35 && humi < 60) {
+		humiState.innerText = 'Good';
+	} else {
+		humiState.innerText = 'Bad';
+	}
+};
+setHumidity();
+
+const setWind = () => {
+	const wind = JSON.parse(localStorage.getItem('wind')).speed;
+	const windText = document.getElementById('windText');
+	windText.innerText = wind + 'km/h';
+	windText.style.fontSize = '200%';
+};
+setWind();
+
+const setFeelsLike = () => {
+	const feelLike = JSON.parse(localStorage.getItem('main')).feels_like;
+	const feelText = document.getElementById('feelText');
+	feelText.innerText = feelLike + '°';
+	feelText.style.fontSize = '200%';
+};
+setFeelsLike();
 
 const hourlyWeatherGraph = document.getElementById('hourlyPredictionChart');
 const getHourlyWeather = async (lat, lon) => {
