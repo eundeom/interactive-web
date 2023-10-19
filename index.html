@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./resources/js/apikey.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Weather</title>
-    <link rel="stylesheet" href="./resources/styles/index.css" />
-  </head>
-  <body class="font-sans">
-    <div id="entire-box" class="flex">
-      <aside id="weather-summary">
-        <div class="location-name">
-          <img
-            class="inline-block"
-            src="./resources/svg/location-w.png"
-            alt="location Icon"
-            width="20px"
-            height="20px"
-          />
-          <span id="location">New York, USA</span>
-        </div>
-        <p id="today">Today 11 Oct</p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./resources/js/apikey.js"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Weather</title>
+		<link rel="stylesheet" href="./resources/styles/index.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+	<body class="font-sans">
+		<div id="entire-box" class="flex">
+			<aside id="weather-summary">
+				<div class="location-name">
+					<img
+						class="inline-block"
+						src="./resources/svg/location-w.png"
+						alt="location Icon"
+						width="20px"
+						height="20px"
+					/>
+					<span id="location">New York, USA</span>
+				</div>
+				<p id="today">Today 11 Oct</p>
 
-        <p id="temper" class="font-semibold text-8xl inline-block">-</p>
+				<p id="temper" class="font-semibold text-8xl inline-block">-</p>
 
-        <div>
-          <img
-            class="inline-block"
-            id="weatherImg"
-            src="./resources/svg/weather-sun.gif"
-            alt="weather Icon"
-            width="20px"
-            height="30px"
-          />
-          <span id="weather-description">Sunny</span>
-        </div>
-      </aside>
-      <main id="weather-main"></main>
-    </div>
-    <script src="./resources/js/index.js"></script>
-  </body>
+				<div>
+					<img
+						class="inline-block"
+						id="weatherImg"
+						src="./resources/svg/weather-sun.gif"
+						alt="weather Icon"
+						width="20px"
+						height="30px"
+					/>
+					<span id="weather-description">Sunny</span>
+				</div>
+			</aside>
+			<main id="weather-main">
+				<p>Check out today's weather information</p>
+				<section id="hourlyPrediction">
+					<p>Upcoming hours</p>
+					<canvas id="hourlyPredictionChart" width="400" height="400"></canvas>
+				</section>
+			</main>
+		</div>
+		<script src="./resources/js/index.js"></script>
+	</body>
 </html>
