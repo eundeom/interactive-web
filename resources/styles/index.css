@@ -1,258 +1,262 @@
 #entire-box {
-	text-align: center;
+  text-align: center;
 }
 #weather-summary {
-	height: 100vh;
-	width: 260px;
-	text-align: center;
-	border-radius: 40px 0 0 40px;
-	color: white;
-	background-color: #629cf3;
+  height: 100vh;
+  width: 260px;
+  text-align: center;
+  border-radius: 40px 0 0 40px;
+  color: white;
+  background-color: #629cf3;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .location-name {
-	margin-top: 80px;
-	padding-bottom: 3px;
+  margin-top: 80px;
+  padding-bottom: 3px;
 }
 #location {
-	font-size: 18px;
+  font-size: 18px;
 }
 #today {
-	padding-bottom: 6px;
+  padding-bottom: 6px;
 }
 #temper {
-	font-size: 65px;
-	margin-bottom: 5px;
+  font-size: 65px;
+  margin-bottom: 5px;
 }
 
 /* toggle */
 .cl-toggle-switch {
-	position: relative;
+  position: relative;
 }
 
 .cl-switch {
-	position: relative;
-	display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 /* Input */
 .cl-switch > input {
-	appearance: none;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	z-index: -1;
-	position: absolute;
-	right: 6px;
-	top: -8px;
-	display: block;
-	margin: 0;
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	background-color: rgb(0, 0, 0, 0.2);
-	outline: none;
-	opacity: 0;
-	transform: scale(1);
-	pointer-events: none;
-	transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: -1;
+  position: absolute;
+  right: 6px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(0, 0, 0, 0.2);
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
 }
 /* Track */
 .cl-switch > span::before {
-	content: '';
-	/* float: right; */
-	display: inline-block;
-	margin: 5px 0 5px 10px;
-	border-radius: 7px;
-	width: 36px;
-	height: 14px;
-	background-color: rgb(0, 0, 0, 0.2);
-	vertical-align: top;
-	transition: background-color 0.2s, opacity 0.2s;
+  content: "";
+  /* float: right; */
+  display: inline-block;
+  margin: 5px 0 5px 10px;
+  border-radius: 7px;
+  width: 36px;
+  height: 14px;
+  background-color: rgb(0, 0, 0, 0.2);
+  vertical-align: top;
+  transition: background-color 0.2s, opacity 0.2s;
 }
 /* Thumb */
 .cl-switch > span::after {
-	content: '';
-	position: absolute;
-	top: 2px;
-	right: 16px;
-	border-radius: 50%;
-	width: 20px;
-	height: 20px;
-	background-color: #fff;
-	box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-		0 1px 5px 0 rgba(0, 0, 0, 0.12);
-	transition: background-color 0.2s, transform 0.2s;
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 16px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s, transform 0.2s;
 }
 /* Checked */
 .cl-switch > input:checked {
-	right: -10px;
-	background-color: #859eb8;
+  right: -10px;
+  background-color: #859eb8;
 }
 
 .cl-switch > input:checked + span::before {
-	background-color: #859ab8;
+  background-color: #859ab8;
 }
 
 .cl-switch > input:checked + span::after {
-	background-color: #287ce3;
-	transform: translateX(16px);
+  background-color: #287ce3;
+  transform: translateX(16px);
 }
 /* Hover, Focus */
 .cl-switch:hover > input {
-	opacity: 0.04;
+  opacity: 0.04;
 }
 
 .cl-switch > input:focus {
-	opacity: 0.12;
+  opacity: 0.12;
 }
 
 .cl-switch:hover > input:focus {
-	opacity: 0.16;
+  opacity: 0.16;
 }
 /* Active */
 .cl-switch > input:active {
-	opacity: 1;
-	transform: scale(0);
-	transition: transform 0s, opacity 0s;
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
 }
 
 .cl-switch > input:active + span::before {
-	background-color: #8f8f8f;
+  background-color: #8f8f8f;
 }
 
 .cl-switch > input:checked:active + span::before {
-	background-color: #85b8b7;
+  background-color: #85b8b7;
 }
 /* Disabled */
 .cl-switch > input:disabled {
-	opacity: 0;
+  opacity: 0;
 }
 
 .cl-switch > input:disabled + span::before {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 
 .cl-switch > input:checked:disabled + span::before {
-	background-color: #bfdbda;
+  background-color: #bfdbda;
 }
 
 .cl-switch > input:checked:disabled + span::after {
-	background-color: #61b5b4;
+  background-color: #61b5b4;
 }
 
 .cl-toggle-switch {
-	display: inline-block;
+  display: inline-block;
 }
 
 .changeTemp {
-	margin-top: 50px;
-	text-align: end;
-	margin-right: 15px;
+  margin-top: 50px;
+  text-align: end;
+  margin-right: 15px;
 }
 
 .spanCelsius {
-	font-size: 13px;
+  font-size: 13px;
 }
 
 .spanFahrenheit {
-	font-size: 13px;
+  font-size: 13px;
 }
 
 .weather-widget {
-	display: flex;
-	flex-direction: row;
-	margin-top: 500px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
 }
 #weather-main {
-	background-color: #ddeeff;
-	border-radius: 0 40px 40px 0;
+  background-color: #ddeeff;
+  border-radius: 0 40px 40px 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 29px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 /* humidity */
 #humidity {
-	width: 250px;
-	height: 150px;
-	border-radius: 40px 40px 40px 40px;
-	background-color: rgb(255, 255, 255, 0.8);
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	/* 상우하좌 */
-	margin: 0 20px 0 50px;
-	/* -webkit-backdrop-filter: blur(40px);
+  width: 250px;
+  height: 150px;
+  border-radius: 40px 40px 40px 40px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  /* 상우하좌 */
+  margin: 0 20px 0 50px;
+  /* -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px); */
 }
 
 .humiText {
-	position: relative;
-	margin-left: 30px;
-	padding-top: 10px;
+  position: relative;
+  margin-left: 60px;
+  padding-top: 10px;
 }
 
 .humiSvg {
-	margin-left: 90px;
-	padding-top: 10px;
+  margin-left: 90px;
+  padding-top: 10px;
 }
 
 .humiRow {
-	display: flex;
-	flex-direction: row;
-	margin-left: 30px;
-	padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+  padding-top: 20px;
 }
 .humiContents {
-	display: flex;
-	flex-direction: row;
-	margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
 }
 #humi {
-	margin-left: 70px;
+  margin-left: 70px;
 }
 #humiState {
-	margin-top: 18px;
-	margin-left: 20px;
+  margin-top: 18px;
+  margin-left: 20px;
 }
 
 /* wind */
 #windSpeed {
-	width: 250px;
-	height: 150px;
-	border-radius: 40px 40px 40px 40px;
-	background-color: rgb(255, 255, 255, 0.8);
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	margin: 0 20px 0 20px;
-	-webkit-backdrop-filter: blur(40px);
-	backdrop-filter: blur(40px);
+  width: 250px;
+  height: 150px;
+  border-radius: 40px 40px 40px 40px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 0 10px 0 10px;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
 }
 
 #windTitle {
-	margin-left: 50px;
-	padding-top: 30px;
+  padding-top: 30px;
 }
 
 #windText {
-	position: relative;
-	margin-left: 55px;
-	padding-top: 10px;
+  position: relative;
+  padding-top: 10px;
 }
 
 /* feels like */
 #feelsLike {
-	width: 250px;
-	height: 150px;
-	border-radius: 40px 40px 40px 40px;
-	background-color: rgb(255, 255, 255, 0.8);
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	margin: 0 50px 0 20px;
-	-webkit-backdrop-filter: blur(40px);
-	backdrop-filter: blur(40px);
+  width: 250px;
+  height: 150px;
+  border-radius: 40px 40px 40px 40px;
+  background-color: rgb(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 0 50px 0 20px;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
 }
 #feel {
-	margin-left: 50px;
-	padding-top: 30px;
+  padding-top: 30px;
 }
 #feelText {
-	position: relative;
-	margin-left: 70px;
-	padding-top: 10px;
+  position: relative;
+  padding-top: 10px;
+}
+#detail-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
