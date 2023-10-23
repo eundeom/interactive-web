@@ -166,6 +166,12 @@
 	background-color: #ddeeff;
 	border-radius: 0 40px 40px 0;
 }
+#hourlyPrediction {
+	height: 400px;
+}
+#hourlyPredictionChart {
+	margin: 0 auto;
+}
 
 /* humidity */
 #humidity {
