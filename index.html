@@ -1,136 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./resources/js/apikey.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@200;300;400;500;600&family=Poppins&family=Work+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <title>Weather</title>
-    <link rel="stylesheet" href="./resources/styles/index.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body class="font-sans">
-    <div id="entire-box">
-      <div class="inline-flex">
-        <aside id="weather-summary">
-          <div class="changeTemp">
-            <span id="spanCelsius">°C</span>
-            <div class="cl-toggle-switch">
-              <label class="cl-switch">
-                <input
-                  type="checkbox"
-                  onclick="changeTemp()"
-                  id="switchCheck"
-                />
-                <span></span>
-              </label>
-            </div>
-            <span id="spanFahrenheit">&nbsp;&nbsp;°F</span>
-          </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./resources/js/apikey.js"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@200;300;400;500;600&family=Poppins&family=Work+Sans&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Weather</title>
+		<link rel="stylesheet" href="./resources/styles/index.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+	<body class="font-sans">
+		<div id="entire-box">
+			<div id="weather-box" class="inline-flex">
+				<aside id="weather-summary">
+					<div class="changeTemp">
+						<span id="spanCelsius">°C</span>
+						<div class="cl-toggle-switch">
+							<label class="cl-switch">
+								<input
+									type="checkbox"
+									onclick="changeTemp()"
+									id="switchCheck"
+								/>
+								<span></span>
+							</label>
+						</div>
+						<span id="spanFahrenheit">&nbsp;&nbsp;°F</span>
+					</div>
 
-          <div class="location-name">
-            <img
-              class="inline-block"
-              src="./resources/svg/location-w.png"
-              alt="location Icon"
-              width="20px"
-              height="20px"
-            />
-            <span id="location"></span>
-          </div>
-          <p id="today"></p>
+					<div class="location-name">
+						<img
+							class="inline-block"
+							src="./resources/svg/location-w.png"
+							alt="location Icon"
+							width="20px"
+							height="20px"
+						/>
+						<span id="location"></span>
+					</div>
+					<p id="today"></p>
 
-          <p id="temper" class="font-semibold text-8xl inline-block">-</p>
+					<p id="temper" class="font-semibold text-8xl inline-block">-</p>
 
-          <div>
-            <img
-              class="inline-block"
-              id="weatherImg"
-              src="./resources/svg/weather-sun.gif"
-              alt="weather Icon"
-              width="20px"
-              height="30px"
-            />
-            <span id="weather-description"></span>
-          </div>
-        </aside>
-        <main id="weather-main">
-          <p class="detail-text">Check out today's weather information</p>
-          <section id="hourlyPrediction">
-            <p class="detail-text" class="margin-bottom">Upcoming hours</p>
-            <div>
-              <section id="hourlyPredictionHour" class="hourlyPre"></section>
-            </div>
-            <div>
-              <section id="hourlyPredictionImg" class="hourlyPre"></section>
-            </div>
-            <div>
-              <section id="hourlyPredictionTemp" class="hourlyPre"></section>
-            </div>
-            <div class="graphBox">
-              <canvas
-                id="hourlyPredictionChart"
-                width="504"
-                height="200"
-              ></canvas>
-            </div>
-          </section>
-          <p class="detail-text">More details of today's weather</p>
-          <div class="weather-widget">
-            <!-- humidity -->
-            <div id="humidity">
-              <div class="humiRow">
-                <p class="humiText">Humidity</p>
-              </div>
-              <div class="humiContents">
-                <p id="humi"></p>
-                <p id="humiState"></p>
-              </div>
-              <div id="humiBarText">
-                <span>good</span>
-                <span>normal</span>
-                <span>bad</span>
-              </div>
-              <div
-                class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700"
-                id="humiDiv"
-              >
-                <div class="bg-blue-500 h-2 rounded-full" id="humiBar"></div>
-              </div>
-            </div>
-            <!-- wind speed -->
-            <div id="windSpeed">
-              <p id="windTitle">Wind</p>
-              <p id="windText"></p>
-            </div>
-            <!-- feels like -->
-            <div>
-              <div id="feelsLike">
-                <p id="feel">Feels like</p>
-                <p id="feelText"></p>
-                <div id="feelBarText">
-                  <span>0°</span>
-                  <span>25°</span>
-                  <span>50°</span>
-                </div>
-                <div
-                  class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700"
-                  id="feelDiv"
-                >
-                  <div class="bg-blue-500 h-2 rounded-full" id="feelBar"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
-    <script src="./resources/js/index.js"></script>
-  </body>
+					<div>
+						<img
+							class="inline-block"
+							id="weatherImg"
+							src="./resources/svg/weather-sun.gif"
+							alt="weather Icon"
+							width="20px"
+							height="30px"
+						/>
+						<span id="weather-description"></span>
+					</div>
+				</aside>
+				<main id="weather-main">
+					<p class="detail-text">Check out today's weather information</p>
+					<section id="hourlyPrediction">
+						<p class="detail-text" class="margin-bottom">Upcoming hours</p>
+						<div>
+							<section id="hourlyPredictionHour" class="hourlyPre"></section>
+						</div>
+						<div>
+							<section id="hourlyPredictionImg" class="hourlyPre"></section>
+						</div>
+						<div>
+							<section id="hourlyPredictionTemp" class="hourlyPre"></section>
+						</div>
+						<div class="graphBox">
+							<canvas
+								id="hourlyPredictionChart"
+								width="504"
+								height="200"
+							></canvas>
+						</div>
+					</section>
+					<p class="detail-text">More details of today's weather</p>
+					<div class="weather-widget">
+						<!-- humidity -->
+						<div id="humidity">
+							<div class="humiRow">
+								<p class="humiText">Humidity</p>
+							</div>
+							<div class="humiContents">
+								<p id="humi"></p>
+								<p id="humiState"></p>
+							</div>
+							<div id="humiBarText">
+								<span>good</span>
+								<span>normal</span>
+								<span>bad</span>
+							</div>
+							<div
+								class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700"
+								id="humiDiv"
+							>
+								<div class="bg-blue-500 h-2 rounded-full" id="humiBar"></div>
+							</div>
+						</div>
+						<!-- wind speed -->
+						<div id="windSpeed">
+							<p id="windTitle">Wind</p>
+							<p id="windText"></p>
+						</div>
+						<!-- feels like -->
+						<div>
+							<div id="feelsLike">
+								<p id="feel">Feels like</p>
+								<p id="feelText"></p>
+								<div id="feelBarText">
+									<span>0°</span>
+									<span>25°</span>
+									<span>50°</span>
+								</div>
+								<div
+									class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700"
+									id="feelDiv"
+								>
+									<div class="bg-blue-500 h-2 rounded-full" id="feelBar"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+		<script src="./resources/js/index.js"></script>
+	</body>
 </html>
