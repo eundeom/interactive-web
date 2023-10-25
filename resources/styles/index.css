@@ -7,7 +7,7 @@
   text-align: center;
   border-radius: 40px 0 0 40px;
   color: white;
-  background-color: #629cf3;
+  background-color: rgb(92, 149, 233);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
@@ -17,14 +17,18 @@
   padding-bottom: 3px;
 }
 #location {
-  font-size: 18px;
+  font-size: 20px;
 }
 #today {
-  padding-bottom: 6px;
+  font-size: 15px;
+  padding-bottom: 8px;
 }
 #temper {
-  font-size: 65px;
+  font-size: 75px;
   margin-bottom: 5px;
+}
+#weather-description {
+  font-size: 15px;
 }
 
 /* toggle */
@@ -171,7 +175,7 @@
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 #weather-main > p {
-  margin-top: 35px;
+  margin-top: 45px;
 }
 #hourlyPrediction {
   background-color: white;
@@ -305,6 +309,7 @@
 .detail-text {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  font-size: 18px;
 }
 #top-img {
   display: flex;
@@ -321,7 +326,7 @@
 @media screen and (max-width: 400px) {
   #weather-summary {
     width: 100vw;
-    height: 200px;
+    height: 260px;
     border-radius: 40px 40px 0 0;
     margin-top: 0px;
     padding-top: 10px;
@@ -332,7 +337,7 @@
     margin-top: 0;
   }
   .location-name {
-    margin-top: 0;
+    margin-top: 23px;
   }
   #weather-main {
     border-radius: 0 0 40px 40px;
