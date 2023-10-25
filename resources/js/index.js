@@ -83,6 +83,8 @@ const setWeatherDesc = () => {
     weatherImg.src = "resources/svg/weather-rain.png";
   } else if (description == "Mist") {
     weatherImg.src = "resources/svg/weather-mist.png";
+  } else if (description == "Snow") {
+    predictImg.src = "resources/svg/weather-snow.png";
   }
 };
 setWeatherDesc();
@@ -108,6 +110,8 @@ const setHumidity = () => {
   } else {
     humiState.innerText = "Bad";
   }
+  const humiBar = document.getElementById("humiBar");
+  humiBar.style.width = humi + "%";
 };
 setHumidity();
 
@@ -126,6 +130,9 @@ const setFeelsLike = () => {
   const feelText = document.getElementById("feelText");
   feelText.innerText = feelLike + "°";
   feelText.style.fontSize = "200%";
+
+  const humiBar = document.getElementById("feelBar");
+  humiBar.style.width = feelLike + "%";
 };
 setFeelsLike();
 const hourlyPredictionHour = document.getElementById("hourlyPredictionHour");
@@ -180,6 +187,8 @@ const getHourlyWeather = async (lat, lon) => {
         predictImg.src = "resources/svg/weather-rain-b.png";
       } else if (description == "Mist") {
         predictImg.src = "resources/svg/weather-mist-b.png";
+      } else if (description == "Snow") {
+        predictImg.src = "resources/svg/weather-snow.png";
       }
       hourlyPredictionImg.appendChild(predictImg);
     }
